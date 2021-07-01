@@ -1,0 +1,15 @@
+name: PhpcsFixer
+
+on: [push]
+
+jobs:
+  build:
+    name: PHP-CS-Fixer
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - uses: docker://oskarstark/php-cs-fixer-ga:2.19.0
+      with:
+        args: --config=.php_cs.dist.php --diff --dry-run
