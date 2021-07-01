@@ -8,6 +8,7 @@ use Runroom\GildedRose\Item;
 
 class GildedRoseTest extends TestCase
 {
+    //COMMENT TEST
     /**
      * @test
      */
