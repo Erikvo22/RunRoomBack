@@ -2,7 +2,7 @@
 
 namespace Runroom\GildedRose;
 
-class GildedRose {
+class GildedRoseController {
 
     private $items;
 
