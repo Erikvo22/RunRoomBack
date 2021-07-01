@@ -4,7 +4,7 @@ namespace Runroom\GildedRose\Model;
 
 class Item {
 
-    function __construct($name, $sell_in, $quality) {
+    function __construct(string $name, int $sell_in, int $quality) {
         $this->name = $name;
         $this->sell_in = $sell_in;
         $this->quality = $quality;

@@ -2,9 +2,14 @@
 
 namespace Runroom\GildedRose\Controller;
 
+use Runroom\GildedRose\Model\Item;
+
 class GildedRoseController {
 
-    function updateQuality($items) {
+    /**
+     * @param array<int, Item> $items
+     */
+    function updateQuality(array $items) : void {
         foreach ($items as $item) {
             if ($item->getName() != 'Aged Brie' and $item->getName() != 'Backstage passes to a TAFKAL80ETC concert') {
                 if ($item->getQuality() > 0) {

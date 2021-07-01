@@ -12,7 +12,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function itemsDegradeQuality()
+    public function itemsDegradeQuality() : void
     {
         $items = [new Item('', 1, 5)];
 
@@ -25,7 +25,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function itemsDegradeDoubleQualityOnceTheSellInDateHasPass()
+    public function itemsDegradeDoubleQualityOnceTheSellInDateHasPass() : void
     {
   		$items = [new Item('', -1, 5)];
 
@@ -38,7 +38,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function itemsCannotHaveNegativeQuality()
+    public function itemsCannotHaveNegativeQuality() : void
     {
   		$items = [new Item('', 0, 0)];
 
@@ -51,7 +51,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function agedBrieIncreasesQualityOverTime()
+    public function agedBrieIncreasesQualityOverTime() : void
     {
   		$items = [new Item('Aged Brie', 0, 5)];
 
@@ -64,7 +64,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function qualityCannotBeGreaterThan50()
+    public function qualityCannotBeGreaterThan50() : void
     {
   		$items = [new Item('Aged Brie', 0, 50)];
 
@@ -77,7 +77,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function sulfurasDoesNotChange()
+    public function sulfurasDoesNotChange() : void
     {
   		$items = [new Item('Sulfuras, Hand of Ragnaros', 10, 10)];
 
@@ -88,6 +88,9 @@ class GildedRoseTest extends TestCase
   		$this->assertEquals(10, $items[0]->getQuality());
   	}
 
+    /**
+     * @return array<array>
+     */
     public static function backstageRules()
     {
   		return [
@@ -102,10 +105,14 @@ class GildedRoseTest extends TestCase
   	}
 
     /**
+     * @param int $sellIn
+     * @param int $quality
+     * @param int $expected
+     *
      * @dataProvider backstageRules
      * @test
      */
-    public function backstageQualityIncreaseOverTimeWithCertainRules($sellIn, $quality, $expected)
+    public function backstageQualityIncreaseOverTimeWithCertainRules(int $sellIn, int $quality, int $expected) : void
     {
   		$items = [new Item('Backstage passes to a TAFKAL80ETC concert', $sellIn, $quality)];
 
