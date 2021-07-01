@@ -4,7 +4,7 @@ namespace Runroom\GildedRose\Controller;
 
 class GildedRoseController {
 
-    function update_quality($items) {
+    function updateQuality($items) {
         foreach ($items as $item) {
             if ($item->getName() != 'Aged Brie' and $item->getName() != 'Backstage passes to a TAFKAL80ETC concert') {
                 if ($item->getQuality() > 0) {
@@ -43,7 +43,7 @@ class GildedRoseController {
                             }
                         }
                     } else {
-                        $item->setQuality($item->getQuality() - $item->getQuality());
+                        $item->setQuality(0);
                     }
                 } else {
                     if ($item->getQuality() < 50) {
