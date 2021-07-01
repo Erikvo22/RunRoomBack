@@ -1,0 +1,17 @@
+name: Psalm
+
+on: [push]
+
+jobs:
+  build:
+    name: Psalm
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://vimeo/psalm-github-actions
+        with:
+          composer_require_dev: true
+          composer_ignore_platform_reqs: true
+          security_analysis: true
