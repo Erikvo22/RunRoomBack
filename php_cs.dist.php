@@ -19,7 +19,7 @@ $header = <<<'EOF'
 $finder = PhpCsFixer\Finder::create()
     ->exclude('tests/Fixtures')
     ->in(__DIR__)
-    ->append([__DIR__.'/php_cs.dist.php'])
+    ->append([__DIR__.'/.php_cs.dist.php'])
 ;
 
 $config = PhpCsFixer\Config::create()
