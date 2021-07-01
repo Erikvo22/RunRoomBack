@@ -4,6 +4,12 @@ namespace Runroom\GildedRose\Model;
 
 class Item {
 
+    function __construct($name, $sell_in, $quality) {
+        $this->name = $name;
+        $this->sell_in = $sell_in;
+        $this->quality = $quality;
+    }
+
     /**
      * @var string
      */
@@ -19,11 +25,6 @@ class Item {
      */
     public int $quality;
 
-    function __construct($name, $sell_in, $quality) {
-        $this->name = $name;
-        $this->sell_in = $sell_in;
-        $this->quality = $quality;
-    }
 
     /**
      * @return string
@@ -72,8 +73,6 @@ class Item {
     {
         $this->quality = $quality;
     }
-
-
 
     public function __toString() {
         return "{$this->getName()}, {$this->getSellIn()}, {$this->getQuality()}";
